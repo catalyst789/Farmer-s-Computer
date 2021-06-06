@@ -1,0 +1,83 @@
+<% include ./partials/header.ejs %>
+
+<body onload="startTime()">
+
+<div id="txt" class="card m-2 text-primary" style="width: 15rem; border: none;">
+  <!-- <% const d = new Date(); %>
+  <%= d %> -->
+  </div>
+</div>
+
+<div id="google_translate_element" style="position:absolute; right:1%; top: 1%;"></div>
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-info mt-3" style="height: 70px;">
+    <a class="navbar-brand text" href="#"><Strong>Farmers Portal</Strong></a>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto text-white">
+        <li class="nav-item active ml-5">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item active ml-3">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item active ml-3">
+            <a class="nav-link" href="#">Emporium</a>
+          </li>
+          <li class="nav-item active ml-3">
+            <a class="nav-link" href="#">Schemes</a>
+          </li>
+          <li class="nav-item active ml-3">
+            <a class="nav-link" href="#">Useful Links</a>
+          </li>
+          <li class="nav-item active ml-3">
+            <a class="nav-link" href="#">Smart Farming</a>
+          </li>
+          <li class="nav-item active ml-3">
+            <a class="nav-link" href="#">Land Details</a>
+          </li>
+      </ul>
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
+    </div>
+  </nav>
+
+
+
+  <script>
+    function startTime() {
+      let today = new Date();
+      // var h = today.getHours();
+      // var m = today.getMinutes();
+      // var s = today.getSeconds();
+      d = checkTime(today);
+      
+      document.getElementById('txt').innerHTML =
+      d;
+      var t = setTimeout(startTime, 1000);
+    }
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+    </script>
+
+
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<% include ./partials/footer.ejs %>
