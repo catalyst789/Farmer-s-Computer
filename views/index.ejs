@@ -1,83 +1,102 @@
 <% include ./partials/header.ejs %>
 
-<body onload="startTime()">
-
-<div id="txt" class="card m-2 text-primary" style="width: 15rem; border: none;">
-  <!-- <% const d = new Date(); %>
-  <%= d %> -->
-  </div>
-</div>
-
-<div id="google_translate_element" style="position:absolute; right:1%; top: 1%;"></div>
-
-
-
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-info mt-3" style="height: 70px;">
-    <a class="navbar-brand text" href="#"><Strong>Farmers Portal</Strong></a>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto text-white">
-        <li class="nav-item active ml-5">
-          <a class="nav-link" href="#">Home</a>
+<div class="card text-center mt-1" style="position: relative;">
+    <div class="card-header">
+      <ul class="nav nav-pills card-header-pills">
+        <li class="nav-item" style="font-size: 15px;">
+          <a class="nav-link active" href="#">🗺 Aligarh</a>
         </li>
-        <li class="nav-item active ml-3">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item active ml-3">
-            <a class="nav-link" href="#">Emporium</a>
-          </li>
-          <li class="nav-item active ml-3">
-            <a class="nav-link" href="#">Schemes</a>
-          </li>
-          <li class="nav-item active ml-3">
-            <a class="nav-link" href="#">Useful Links</a>
-          </li>
-          <li class="nav-item active ml-3">
-            <a class="nav-link" href="#">Smart Farming</a>
-          </li>
-          <li class="nav-item active ml-3">
-            <a class="nav-link" href="#">Land Details</a>
-          </li>
+        <li class="nav-item" style="position: absolute; left: 45%; font-size: 18px;">
+          <a class="nav-link" href="#">Thursday</a>
+        </li>
+        <li class="nav-item" style="position: absolute; right: 1%; font-size: 20px;">
+          <a class="nav-link disabled" href="#">14:02</a>
+        </li>
       </ul>
-      <!-- <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form> -->
     </div>
-  </nav>
+    <div class="card-body" style="height: 180px;">
+      <h5 class="card-title" style="margin-right: 90%; font-size: 35px;">Sunny</h5>
+      <p class="card-text" style=" margin-right: 0%; position: absolute; left: 45%; top: 40%; font-size: 45px; opacity: .8;" >44.5 °C</p>
+      <p class="card-text" style="margin-right: 80%; font-size: 25px; opacity: .7;" >Wind Speed 4-5 m/s</p>
+      <img src="../images/weather/day/179.png" alt="Sunny" style="position: absolute; top: 30%; right: 5%; width: 100px; height: 100px;">
+      <a href="#" class="btn btn-primary" style="position: absolute; left: 43.5%; top: 80%;">See Full Weather Report</a>
+    </div>
+  </div>
 
-
-
-  <script>
-    function startTime() {
-      let today = new Date();
-      // var h = today.getHours();
-      // var m = today.getMinutes();
-      // var s = today.getSeconds();
-      d = checkTime(today);
-      
-      document.getElementById('txt').innerHTML =
-      d;
-      var t = setTimeout(startTime, 1000);
-    }
-    function checkTime(i) {
-      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-      return i;
-    }
-    </script>
-
-
-
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-    </script>
+  <div class="container mt-5 ml-5">
+    <h3>Impact of weather on crops</h3>
+    <p>Changing weather is a natural thing farmers face from season to season. Variations in weather definitely affect crop yields but don’t take farmers by surprise. But with global climate change, Mother Nature seems to be putting extra effort into making things complicated for farmers, pushing them towards climate resilient agricultural practices.</p>
     
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   <h4 class="mt-3"> Projected impact of climate changes on agriculture </h4>
+   <img style="margin-left: 30%;" src="../images/Projected-impact-of-climate-changes-on-agriculture1.jpg" alt="">
+   <p>All of a sudden, floods can sweep across fields, mixing seeds in the soil and leaving farmers guessing where to harvest their crops. Spring rains are the main reason for floods that harm agribusiness profits.
+
+    And how about early freezing that impacts crop maturity? Often, farmers are left unarmed against weather deviations. Last year, social media was saturated with messages on snowfall in the Dakotas slowing wheat harvests and leaving no chance for corn to mature. Farmers in other states were not long in voicing their concerns. <br> But hold off on cursing the weather. As it turns out, weather forecasting software together with the right data can help you predict and mitigate the consequences of dangerous weather.</p>
+
+    <h3>Weather solutions for agriculture will not survive without this</h3>
+    <p>Almost every solution for smart weather monitoring relies on data. And we’re not only talking about forecasting extreme weather like floods but regular weather conditions in the field that impact crops day to day. Thanks to technologies like IoT weather stations, weather collection data, and AI weather prediction, agribusinesses can store and process countless data sets to be prepared for weather changes, react to them fast, and promote climate change management initiatives.</p>
+
+    <h3>The most critical weather data for agriculture</h3>
+    <p><span style="font-weight: bolder;">Rainfall</span> – Analyzing historical data on rain over defined periods provides bold observations and serves as valuable input for future predictions based on artificial intelligence algorithms.</p>
+
+    <p><span style="font-weight: bolder;">Temperature</span> – Tracking changes in temperature during the day, month, and year gives an outlook at conditions for crops and inputs for further analytics on conditions determining weather changes.</p>
+
+    <p><span style="font-weight: bolder;">Wind</span> – Wind direction and speed can warn farmers of a coming storm.</p>
+
+    <p><span style="font-weight: bolder;">Air pressure</span> – This is one of the most important measurements for predicting weather changes.</p>
+
+    <p><span style="font-weight: bolder;">Humidity</span> – This metric is critical, especially with regard to preparing for rain and using water smartly.</p>
+
+Later, all these data sets can be gathered into a unified platform for weather monitoring and made available from any device. Farmers may customize dashboards to monitor the most critical data and visualize analytics for better decision-making. On a smart weather dashboard, farmers also can: <br> <br>
+
+    👉 set the number of measurements collected over a defined period (hours, days, weeks, months, years) <br> <br>
+    👉 track all historical data or choose a period to display <br> <br>
+    👉 observe community data from other farms as open-source information <br> <br>
+    👉 locate all sensors across fields to know where weather changes may already be impacting crops <br> <br>
+    👉 correlate metrics to build forecasts accounting for all potential hazards and get suggestions for protecting fields <br> <br>
+
+    <h2>What technologies are critical for successful weather monitoring and forecasting in agriculture?</h2>
+    <p>Applying real-time data on weather conditions relevant to the current location and season helps farmers take care of soil and crops and manage all weather-related risks. When it comes to selecting technologies for weather forecasting, agribusinesses should consider a mix of agricultural tech solutions that complement each other. The three main technologies that contribute to the development of intelligent weather monitoring for agriculture are smart IoT sensors to collect and analyze data, satellites and weather stations, and AI and machine learning systems for weather predictions.</p>
+
+    <h3>IoT sensors for weather monitoring</h3>
+    <p>IoT sensors lay the foundation for a bigger connected system for monitoring weather conditions. These systems rely on a network of connected sensors that collect data in the field. Cloud computing platforms then process the collected data to provide alarms and notifications on potential weather hazards affecting crops.</p>
+
+    <h3>Connected system of IoT sensors for weather monitoring</h3>
+    <img style="margin-left: 30%;" src="../images/Connected-system-of-IoT-sensors-for-weather-monitoring1.jpg"alt="IoT">
+    <p>Using IoT systems, farmers can get real-time access to information on the environment and soil to plan actions ahead of weather changes. When a system receives disturbing data from weather sensors, it can send a notification on upcoming frost or rainfall.</p>
+
+    <h3>Advantages of IoT solutions for weather condition monitoring:</h3><br>
+    👉 Reduce risks to crops by monitoring severe weather conditions <br> <br>
+    👉 Help farmers optimize use of resources and protect crops <br> <br>
+    👉 Increase the quality of products by suggesting the best time for harvesting <br> <br>
+    👉 Send notifications to multiple devices and platforms in real time <br> <br>
+    👉 Collect reliable data in the field that’s relevant to a farm’s location and the  current season <br> <br>
+    👉 Integrate with third-party services and access community data <br><br>
+
+    <h3>Satellite data and hardware stations used in weather prediction for agriculture</h3>
+    <p>Farmers can adopt satellite data for various purposes and use aerial images to observe crop yields and perform weather forecasting in agriculture. Satellites can be used in two ways. First, as a source of data for farmers’ weather forecast apps, and second as transmitters of data collected from agricultural weather stations on Earth. This second use case is a bit expensive, however, as transmission of data via satellites costs a lot — nearly $1,000 per kilobyte. Farmers can use satellites to access geospatial and meteorological data to prepare fields for uncommon or severe weather.</p>
+
+    <p>Agribusinesses are also using satellites for weather forecasting to monitor global climate changes and predict weather disasters like fires and floods. Most often, satellites are controlled by government organizations and therefore aren’t flexible enough for custom use cases. Still, they provide the overall picture of weather conditions in an area. Collecting satellite images and data empowers AgriTech applications to assist in predicting crop yields based on weather conditions and field monitoring. It also helps in planning smart irrigation based on weather changes that can spread potentially dangerous herbicides across the terrain.</p>
+    <img style="margin-left: 30%;" src="../images/weather-conditions-and-field-monitoring1.jpg" alt=""> <br>
+
+    <h3>AI and machine learning to predict weather events</h3>
+    <p>The application of AI and machine learning to weather forecasting is the most recent and promising technological advancement for agriculture. For example, IBM has created a decision platform for agriculture by implementing its IBM Watson technology. As with any AI solution, weather forecasting requires a huge amount of data to teach machine learning algorithms. This data can be crowdsourced from connected sensors, satellites, and local hardware weather stations to create accurate localized weather predictions. These predictions require great computing power to process large data sets, and capable storage is required to save this data for future use.</p>
+    <img style="margin-left: 30%;" src="../images/Weather-prediction-and-machine-learning.jpg" alt="">
+
+    <p>As deep learning algorithms rely most on the quality of training data, data quality and labeling is critical for accurate predictions. Sorting data and recognizing weather patterns should help to extract accurate insights on determining weather conditions following training of a deep learning model.
+    </p>
+    <p>The increase in accurate data sources plays a big role in successful weather prediction. There are more than 1,000 weather monitoring satellites currently orbiting the Earth, and there are thousands of weather stations on the Earth’s surface. The most recent addition is IoT-connected sensors installed by individual farmers in their fields. All of these provide enough inputs to teach algorithms how to distinguish between cloud patterns, recognize the consequences of the smallest temperature and humidity changes, and detect potential hazards based on changes in wind direction that may bring weather fronts from other terrains.</p>
+    <br><br><br>
+    <br><br><br>
+  </div>
+
+
+<script>
+    fetch('http://api.openweathermap.org/data/2.5/weather?lat=26.8467088&lon=80.9461592&appid=fce9cc430703e4841ad30dac076deb7b&units=metric').then(rawData => {
+        rawData.json().then(weather => console.log(weather))
+                      .catch(err => console.log(err));
+    })
+</script>
+
+
 <% include ./partials/footer.ejs %>

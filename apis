@@ -1,0 +1,40 @@
+https://content.api.nytimes.com/svc/weather/v2/current-and-seven-day-forecast.json
+
+http://api.openweathermap.org/data/2.5/weather?q=aligarh&appid=fce9cc430703e4841ad30dac076deb7b&units=metric
+
+http://api.openweathermap.org/data/2.5/weather?lat=26.8467088&lon=80.9461592&appid=fce9cc430703e4841ad30dac076deb7b
+
+
+
+  <script>
+        const succesfulLookup = (position) => {
+    const { latitude, longitude } = position.coords;
+    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=9dc254b4305646c99abffcd148377642`)
+    .then(res => res.json())
+    .then(console.log);
+};
+
+    navigator.geolocation.getCurrentPosition(succesfulLookup, console.log);
+
+
+    </script>
+
+    <script type="text/javascript">
+    navigator.geolocation.getCurrentPosition(success, error);
+
+    function success(position) {
+        console.log(position.coords.latitude)
+        console.log(position.coords.longitude)
+
+        var GEOCODING = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyB7ly-g1ZDG0nrYehUkcgoZHNf5egTS-cI&latlng=' + position.coords.latitude + '%2C' + position.coords.longitude + '&language=en';
+
+        $.getJSON(GEOCODING).done(function(location) {
+            console.log(location)
+        })
+
+    }
+
+    function error(err) {
+        console.log(err)
+    }
+</script>
