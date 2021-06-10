@@ -90,7 +90,7 @@ Later, all these data sets can be gathered into a unified platform for weather m
   </div>
 
 <script>
-    fetch('http://api.openweathermap.org/data/2.5/weather?lat=26.8467088&lon=80.9461592&appid=fce9cc430703e4841ad30dac076deb7b&units=metric').then(rawData => {
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=26.8467088&lon=80.9461592&appid=fce9cc430703e4841ad30dac076deb7b&units=metric').then(rawData => {
         rawData.json().then(weather => {
           document.querySelector('#city').innerHTML += weather.name
           document.querySelector('#weatherDesc').innerHTML = weather.weather[0].description
