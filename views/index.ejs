@@ -1,24 +1,23 @@
 <% include ./partials/header.ejs %>
-
 <div class="card text-center mt-1" style="position: relative;">
     <div class="card-header">
       <ul class="nav nav-pills card-header-pills">
         <li class="nav-item" style="font-size: 15px;">
-          <a class="nav-link active" href="#">🗺 Aligarh</a>
+          <a id="city" class="nav-link active" href="#">🗺 </a>
         </li>
         <li class="nav-item" style="position: absolute; left: 45%; font-size: 18px;">
-          <a class="nav-link" href="#">Thursday</a>
+          <a id="humidity" class="nav-link" href="#">22%</a>
         </li>
-        <li class="nav-item" style="position: absolute; right: 1%; font-size: 20px;">
+        <li id="weatherDate" class="nav-item" style="position: absolute; right: 1%; font-size: 20px;">
           <a class="nav-link disabled" href="#">14:02</a>
         </li>
       </ul>
     </div>
     <div class="card-body" style="height: 180px;">
-      <h5 class="card-title" style="margin-right: 90%; font-size: 35px;">Sunny</h5>
-      <p class="card-text" style=" margin-right: 0%; position: absolute; left: 45%; top: 40%; font-size: 45px; opacity: .8;" >44.5 °C</p>
-      <p class="card-text" style="margin-right: 80%; font-size: 25px; opacity: .7;" >Wind Speed 4-5 m/s</p>
-      <img src="../images/weather/day/179.png" alt="Sunny" style="position: absolute; top: 30%; right: 5%; width: 100px; height: 100px;">
+      <h5 id="weatherDesc" class="card-title" style="margin-right: 90%; font-size: 35px;">Sunny</h5>
+      <p id="temprature" class="card-text" style=" margin-right: 0%; position: absolute; left: 40%; top: 40%; font-size: 45px; opacity: .8;" >44.5 °C</p>
+      <p id="windSpeed" class="card-text" style="margin-right: 80%; font-size: 25px; opacity: .7;" >Wind Speed 4-5 m/s</p>
+      <img id="weatherImg" src="../images/weather/day/179.png" alt="Sunny" style="position: absolute; top: 30%; right: 5%; width: 100px; height: 100px;">
       <a href="#" class="btn btn-primary" style="position: absolute; left: 43.5%; top: 80%;">See Full Weather Report</a>
     </div>
   </div>
@@ -90,12 +89,34 @@ Later, all these data sets can be gathered into a unified platform for weather m
     <br><br><br>
   </div>
 
-
 <script>
     fetch('http://api.openweathermap.org/data/2.5/weather?lat=26.8467088&lon=80.9461592&appid=fce9cc430703e4841ad30dac076deb7b&units=metric').then(rawData => {
-        rawData.json().then(weather => console.log(weather))
+        rawData.json().then(weather => {
+          document.querySelector('#city').innerHTML += weather.name
+          document.querySelector('#weatherDesc').innerHTML = weather.weather[0].description
+          document.querySelector('#temprature').innerHTML = `${weather.main.temp_min}°C ~ ${weather.main.feels_like}°C`
+          document.querySelector('#windSpeed').innerHTML = `wind ${weather.wind.speed} m/s`
+          document.querySelector('#weatherImg').src = `../images/weather/day/${weather.weather[0].icon}.png`
+          document.querySelector('#humidity').innerHTML = `Humidity : ${weather.main.humidity}%`
+
+          console.log(weather)
+        })
                       .catch(err => console.log(err));
     })
+
+
+      function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+  }
+  document.querySelector('#weatherDate').innerHTML = formatAMPM(new Date);
+
 </script>
 
 
